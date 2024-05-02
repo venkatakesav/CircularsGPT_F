@@ -1,0 +1,25 @@
+# Model details
+model_name: weights/pix2struct-large_0_half_10
+processor_name: ybelkada/pix2struct-base
+
+# Directories
+image_directory: /data/circulars/DATA/Batches-Split_Images
+json_directory: /data/circulars/CircularsGPT_M/data
+
+# Model Configuration:
+validation_size: large
+max_patches: 1024
+random_state: 42
+
+# Training Configuration:
+device: 1
+validation_size: 0.1
+learning_rate: 0.00001
+epochs: 50
+batch_size: 32
+
+# Path for saving weight files
+weight_path: /data/circulars/CircularsGPT_M/weights
+
+# Path for logging
+logger_path: /data/circulars/CircularsGPT_M/logging/large_1_docvqa_10.txt

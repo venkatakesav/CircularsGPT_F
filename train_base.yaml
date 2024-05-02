@@ -1,0 +1,27 @@
+# Model details
+model_name: ybelkada/pix2struct-base
+processor_name: ybelkada/pix2struct-base
+
+# Directories
+image_directory: /data/circulars/DATA/Batches-Split_Images
+# json_directory: /data/circulars/CircularsGPT_M/data/
+json_directory: /data/circulars/CircularsGPT_M/data/
+
+
+# Model Configuration:
+validation_size: base
+max_patches: 1024
+random_state: 42
+
+# Training Configuration:
+device: 0
+validation_size: 0.1
+learning_rate: 0.00001
+epochs: 50
+batch_size: 12
+
+# Path for saving weight files
+weight_path: /data/circulars/CircularsGPT_M/weights
+
+# Path for logging
+logger_path: /data/circulars/CircularsGPT_M/logging/base_docvqa.txt
