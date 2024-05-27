@@ -6,7 +6,6 @@ from torch.utils.data import DataLoader
 class BaseModel(ABC):
     def __init__(self, config):
         self.config = config
-        self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     @abstractmethod
     def train(self, train_dataloader: DataLoader):

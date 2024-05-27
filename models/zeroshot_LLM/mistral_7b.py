@@ -10,6 +10,11 @@ messages = [
     {"role": "assistant", "content": "Well, I'm quite partial to a good squeeze of fresh lemon juice. It adds just the right amount of zesty flavour to whatever I'm cooking up in the kitchen!"},
     {"role": "user", "content": "Do you have mayonnaise recipes?"}
 ]
+messages = [
+    {"role": "user", "content": "What is your favourite condiment?"},
+    # {"role": "assistant", "content": "Well, I'm quite partial to a good squeeze of fresh lemon juice. It adds just the right amount of zesty flavour to whatever I'm cooking up in the kitchen!"},
+    # {"role": "user", "content": "Do you have mayonnaise recipes?"}
+]
 
 encodeds = tokenizer.apply_chat_template(messages,tokenize=True, add_generation_prompt=False, return_tensors="pt")
 

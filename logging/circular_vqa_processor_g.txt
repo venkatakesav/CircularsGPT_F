@@ -1,3 +1,0 @@
-Logging started...
-Data Sets Used: ['middle_page_batch_2.json', 'last_page_batch_4.json', 'test.json', 'first_page_batch_4.json', 'first_page_batch_2.json']
-Log file used {'model_name': 'weights/pix2struct-base_10', 'processor_name': 'google/pix2struct-docvqa-base', 'image_directory': '/data/circulars/DATA/Batches-Split_Images/', 'json_directory': '/data/circulars/CircularsGPT_M/data', 'validation_size': 0.1, 'max_patches': 1024, 'random_state': 42, 'device': 0, 'learning_rate': 1e-05, 'epochs': 50, 'batch_size': 1, 'weight_path': '/data/circulars/CircularsGPT_M/weights', 'logger_path': '/data/circulars/CircularsGPT_M/logging/circular_vqa_processor_g.txt'}For The Next Round of Evaluation

@@ -2,7 +2,6 @@ from torch.utils.data import Dataset, DataLoader
 from PIL import Image
 from transformers import AutoProcessor
 import torch
-
 import logging
 
 class Pix2StructCollator():

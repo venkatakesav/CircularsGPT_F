@@ -9,14 +9,19 @@ def preprocess_text(text):
     text = text.replace('\\\"', "'")
     return text
 
-def pix2struct_preprocess(image_directory, json_directory):
+def pix2struct_preprocess(image_directory, json_directory, test_flag=False):
     data_dir = './Dataset/jsons'
-    jsons = ['first_page.json', 'middle_page.json', 'last_page.json', 'first_page_2.json']
+    jsons = ['first_page_batch_2.json', 'first_page_batch_4.json', 'last_page_batch_4.json', 'middle_page_batch_2.json']
     final_dataset = []
 
     json_files = os.listdir(json_directory)
+    print("JSON Files:", json_files)
 
     for json_file in json_files:
+        if json_file == "test_batch_1.json":
+            print("Skipping File:", json_file)
+            continue
+
         with open(os.path.join(json_directory, json_file)) as f:
             train_data = json.load(f)
 
@@ -27,8 +32,12 @@ def pix2struct_preprocess(image_directory, json_directory):
         for data in train_data:
             hindi_flag = False
             for entry in data[0]["question_answer_pairs"]:
+            # for entry in data["question_answer_pairs"]:
                 temp = {}
-                temp["document"] = f"{image_directory}{json_directory.split('.')[-1].split('/')[-1]}/Batch_{batch_no}/{json_file.split('.')[0]}/{data[0]['file_name']}"
+                if test_flag:
+                    temp["document"] = f"{image_directory}/{data[0]['file_name']}"
+                else:
+                    temp["document"] = f"{image_directory}{json_directory.split('.')[-1].split('/')[-1]}/Batch_{batch_no}/{json_file.split('.')[0]}/{data[0]['file_name']}"
                 temp["question"] = preprocess_text(entry["question"])
                 temp["answer"] = preprocess_text(entry["answer"])
 

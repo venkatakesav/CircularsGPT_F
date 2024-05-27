@@ -1,0 +1,27 @@
+# evaluate_base.yaml
+image_directory: "/data/circulars/DATA/Batches-Split_Images/test_set/from_batch_1_fp"
+json_directory: "/data/circulars/CircularsGPT_M/data/"
+validation_size: 0.2
+random_state: 42
+max_patches: 4096
+batch_size: 8
+learning_rate: 0.001
+epochs: 10
+logger_path: "path/to/log/file.log"
+model: 
+  name: "pix2struct"
+  config:
+    model_name: "Pix2StructModelName"
+    model_weights_path: ""
+    processor_name: "Pix2StructProcessorName"
+    device: "cuda"
+  # name: "docowl"    
+  # docowl_config: 
+  #   model_name: "DocOWLModelName"
+  #   model_weights_path: ""
+  #   processor_name: "DocOWLProcessorName"
+  #   device: "cuda"
+# Path for saving weight files
+weight_path: /data/circulars/CircularsGPT_M/weights
+# Path for logging
+logger_path: /data/circulars/CircularsGPT_M/logging/circulars_base_evaluate_4096.txt

@@ -9,3 +9,13 @@
 
 # Metrics
 /metrics/data
+
+# Logs
+/logging/*
+
+# Evaluation
+/evaluation
+
+*.json
+
+*.txt
